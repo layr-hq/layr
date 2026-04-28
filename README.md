@@ -22,7 +22,7 @@ It turns proven principles into strict rules the AI must follow when building.
 
 ---
 
-## What it’s based on
+## What it’s based on /Methods
 
 - Hick’s Law - reduce choices  
 - Cognitive Load - reduce thinking  
@@ -33,7 +33,7 @@ It turns proven principles into strict rules the AI must follow when building.
 - Gestalt - clear structure  
 - Signal vs Noise - remove clutter  
 - Default Bias - guide decisions  
-- + More
+- and More
 
 Most people know these.  
 This system enforces them.
