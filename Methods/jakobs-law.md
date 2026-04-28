@@ -1,28 +1,45 @@
 # Jakob’s Law
 
-## What it is
-Users expect your product to work like other products they already know.
+## What
+Users expect your interface to work like other interfaces they already know.
 
 ## Why it matters
 Breaking familiar patterns increases confusion and learning time.
 
+## When to apply
+- navigation
+- layout structure
+- common UI patterns
+- forms and interactions
+
 ## How to apply
-- follow common UI patterns
+
+- follow standard UI patterns
 - keep navigation predictable
-- use familiar layouts and interactions
-- don’t reinvent standard components
+- use familiar layouts
+- avoid unnecessary custom behaviour
+
+## Implementation rules
+
+- use common navigation patterns (top nav, sidebar)
+- place actions where users expect them
+- avoid reinventing basic UI components
+- prioritise familiarity over creativity
 
 ## Example
+
 Bad:
-Custom, unfamiliar navigation
+- custom navigation with unclear behaviour
 
 Good:
-Standard navigation users already understand
+- standard navigation users already understand
 
-## Fail signs
+## Fail conditions
+
 - user doesn’t know where to click
-- user feels lost
-- user has to “learn” your UI
+- user gets lost
+- user has to learn the interface
 
-## Rule
-Don’t make users relearn what they already know.
+## Enforcement rule
+
+Do not make users learn new patterns unless absolutely necessary.
