@@ -62,37 +62,29 @@ This system forces:
 ## How the system works
 
 ```mermaid
-flowchart LR
-
-    subgraph INPUT
-        A[Input - Task + User Goal]
-    end
-
-    subgraph STRUCTURE
-        B[Template - screen.md]
-    end
-
-    subgraph RULES
-        C[UX Rules - UX.md]
-        D[Design Rules - Design.md]
-        E[Methods - /methods/]
-    end
-
-    subgraph EXECUTION
-        F[Build UI]
-        G[UX Scoring]
-    end
-
-    subgraph OUTPUT
-        J[Output - Clear, Usable Interface]
-    end
-
-    A --> B --> C --> D --> E --> F --> G
-
-    G --> H{Score >= 85?}
-    H -- No --> I[Improve]
+flowchart TD
+    A["Task + user goal"] --> B["Screen template"]
+    B --> C["UX.md rules"]
+    C --> D["Design.md rules"]
+    D --> E["Methods library"]
+    E --> F["Build interface"]
+    F --> G["Score UX"]
+    G --> H{"Score >= 85?"}
+    H -- "No" --> I["Improve weak areas"]
     I --> G
-    H -- Yes --> J
+    H -- "Yes" --> J["Clear, usable output"]
+
+    classDef input fill:#0f172a,stroke:#64748b,color:#f8fafc;
+    classDef rules fill:#111827,stroke:#818cf8,color:#f8fafc;
+    classDef action fill:#172554,stroke:#60a5fa,color:#f8fafc;
+    classDef decision fill:#312e81,stroke:#a5b4fc,color:#f8fafc;
+    classDef output fill:#064e3b,stroke:#34d399,color:#ecfdf5;
+
+    class A,B input;
+    class C,D,E rules;
+    class F,G,I action;
+    class H decision;
+    class J output;
 ```
 
 ---
