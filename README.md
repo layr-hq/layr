@@ -61,20 +61,38 @@ This system forces:
 
 ## How the system works
 
-## How the system works
-
 ```mermaid
 flowchart LR
-    A[Input - Task + User Goal] --> B[Templates - screen.md]
-    B --> C[UX Rules - UX.md]
-    C --> D[Design Rules - Design.md]
-    D --> E[Methods - /methods/]
-    E --> F[Build UI]
-    F --> G[UX Scoring]
+
+    subgraph INPUT
+        A[Input - Task + User Goal]
+    end
+
+    subgraph STRUCTURE
+        B[Template - screen.md]
+    end
+
+    subgraph RULES
+        C[UX Rules - UX.md]
+        D[Design Rules - Design.md]
+        E[Methods - /methods/]
+    end
+
+    subgraph EXECUTION
+        F[Build UI]
+        G[UX Scoring]
+    end
+
+    subgraph OUTPUT
+        J[Output - Clear, Usable Interface]
+    end
+
+    A --> B --> C --> D --> E --> F --> G
+
     G --> H{Score >= 85?}
     H -- No --> I[Improve]
     I --> G
-    H -- Yes --> J[Output - Clear, Usable Interface]
+    H -- Yes --> J
 ```
 
 ---
