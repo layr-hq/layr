@@ -54,38 +54,143 @@ This forces:
 
 ---
 
-## How to use
+## How to use (with AI)
 
-1. Load into AI
+Follow these steps:
 
-Read UX.md and Design.md  
-Treat them as strict rules
+---
 
-2. Define task
+### 1. Download the repo
 
-[TASK]:  
-[USER TYPE]:  
-[CORE GOAL]:  
+- Click "Code" → Download ZIP (or clone it)
+- Keep these files open:
+  - UX.md
+  - Design.md
+  - /templates/screen.md
+
+---
+
+### 2. Create your screen
+
+Go to:
+
+/templates/screen.md
+
+Duplicate it and rename it:
+
+/screens/home.md  
+/screens/onboarding.md  
+/screens/dashboard.md  
+
+Then fill it in:
+
+[SCREEN NAME]:  
+[USER INTENT]:  
+[PRIMARY GOAL]:  
 [PRIMARY ACTION]:  
+[SECONDARY ACTIONS]: (max 1–2)  
+[NEXT STEP]:  
 
-3. Enforce validation
+Keep it simple.
 
-Validate output against UX.md and Design.md  
-Fix anything that breaks the rules  
+---
 
-4. Iterate
+### 3. Use this prompt in your AI tool
 
-build → evaluate → fix → repeat  
+Copy everything below:
+
+--------------------------------
+
+Read UX.md and Design.md fully.
+
+Treat them as strict rules, not suggestions.
+Do not violate them.
+
+Use /templates/screen.md to structure the screen.
+
+--------------------------------
+
+[TASK]:
+Build this screen
+
+[USER TYPE]:
+[Describe your user]
+
+[CORE GOAL]:
+[What they want]
+
+[PRIMARY ACTION]:
+[Main action]
+
+--------------------------------
+
+PROCESS:
+
+1. Define the screen
+2. Build the UI/UX
+3. Score it using UX.md
+4. Fix weak areas
+5. Repeat until score ≥ 85
+
+--------------------------------
+
+RULES:
+
+- one clear primary action
+- minimise decisions
+- remove unnecessary elements
+- optimise for speed and clarity
+
+--------------------------------
+
+OUTPUT:
+
+- final improved version only
+- include UX score (/100)
+
+--------------------------------
+
+If the user has to think → it failed
+
+---
+
+### 4. Paste your screen below the prompt
+
+Example:
+
+[SCREEN NAME]: Home  
+[USER INTENT]: User wants to get started  
+[PRIMARY GOAL]: Guide to first action  
+[PRIMARY ACTION]: Get Started  
+
+---
+
+### 5. Let AI build + improve
+
+It will:
+- build the screen
+- score it
+- improve it
+- repeat until strong
+
+---
+
+### 6. Repeat for each screen
+
+Use this for:
+- onboarding
+- dashboards
+- features
+- full flows
 
 ---
 
 ## Goal
 
 User understands instantly  
+User knows what to do immediately  
 
-If they have to think → it failed
-
----
+If they have to think → it’s wrong
 
 ## License
 
