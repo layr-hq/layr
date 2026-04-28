@@ -33,6 +33,7 @@ It turns proven principles into strict rules the AI must follow when building.
 - Gestalt - clear structure  
 - Signal vs Noise - remove clutter  
 - Default Bias - guide decisions  
+- + More
 
 Most people know these.  
 This system enforces them.
