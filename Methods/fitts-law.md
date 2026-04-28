@@ -1,28 +1,45 @@
 # Fitts’s Law
 
-## What it is
-The time to interact with something depends on its size and distance.
+## What
+The time to interact with an element depends on its size and distance.
 
 ## Why it matters
-Small or hard-to-reach targets slow users down and cause errors.
+Small or hard-to-reach targets slow users down and increase errors.
+
+## When to apply
+- buttons
+- links
+- navigation elements
+- mobile interfaces
+- primary actions
 
 ## How to apply
+
 - make primary actions large and easy to click
-- keep important actions within easy reach
-- avoid tiny buttons or links
+- position important actions in easy-to-reach areas
 - increase spacing between clickable elements
 
+## Implementation rules
+
+- minimum target size: 40x40px
+- primary actions must be visually dominant
+- avoid placing critical actions in hard-to-reach areas
+- maintain consistent spacing between elements
+
 ## Example
+
 Bad:
-Small buttons close together
+- small buttons close together
 
 Good:
-Large, well-spaced primary action
+- large primary button with clear spacing
 
-## Fail signs
+## Fail conditions
+
 - missed clicks
-- slow interactions
-- frustration on mobile
+- slow interaction
+- accidental clicks
 
-## Rule
-Make important actions big and easy to hit.
+## Enforcement rule
+
+Important actions must be large, obvious, and easy to hit.
