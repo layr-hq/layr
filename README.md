@@ -6,8 +6,9 @@ A rule-based UX and design system for AI-built apps, turning proven principles i
 
 ## Table of Contents
 - [What this is](#what-this-is)
-- [What it’s based on](#what-its-based-on)
+- [What it’s based on / Methods](#what-its-based-on--methods)
 - [Why it matters](#why-it-matters)
+- [How the system works](#how-the-system-works)
 - [Instructions](#instructions)
 - [Goal](#goal)
 - [License](#license)
@@ -22,7 +23,7 @@ It turns proven principles into strict rules the AI must follow when building.
 
 ---
 
-## What it’s based on /Methods
+## What it’s based on / Methods
 
 - Hick’s Law - reduce choices  
 - Cognitive Load - reduce thinking  
@@ -33,7 +34,7 @@ It turns proven principles into strict rules the AI must follow when building.
 - Gestalt - clear structure  
 - Signal vs Noise - remove clutter  
 - Default Bias - guide decisions  
-- and More
+- and more
 
 Most people know these.  
 This system enforces them.
@@ -58,13 +59,44 @@ This system forces:
 
 ---
 
+## How the system works
+
+```text
+INPUT
+(Task + user goal)
+        ↓
+TEMPLATES
+(/templates/screen.md)
+        ↓
+UX RULES
+(UX.md)
+        ↓
+DESIGN RULES
+(Design.md)
+        ↓
+METHODS
+(/methods/)
+        ↓
+BUILD
+        ↓
+UX SCORING
+        ↓
+ITERATION LOOP
+(build - score - improve)
+        ↓
+OUTPUT
+(clear, usable interface)
+```
+
+---
+
 ## Instructions
 
 Use this system to design screens that are fast, obvious, and require zero thinking.
 
 ---
 
-### Step 1 - Load the system into your AI Model 
+### Step 1 - Load the system into your AI model
 
 Open your AI tool (Claude, Codex, Cursor, etc).
 
@@ -75,7 +107,7 @@ Paste both files into the context:
 
 Tell the AI:
 
-```
+```text
 Read UX.md and Design.md fully.
 
 Treat them as strict rules, not suggestions.
@@ -86,7 +118,9 @@ These files control how the AI thinks and builds.
 
 ---
 
-### Step 2 - Define the user and goal in the UX.md file - Replace [Placeholders]
+### Step 2 - Define the user and goal in UX.md
+
+Replace the placeholders in UX.md.
 
 Before building anything, be clear on:
 
@@ -106,7 +140,7 @@ Go to:
 
 Duplicate it and rename it:
 
-```
+```text
 /screens/home.md
 /screens/onboarding.md
 /screens/dashboard.md
@@ -114,7 +148,7 @@ Duplicate it and rename it:
 
 Fill it in:
 
-```
+```text
 SCREEN NAME:
 [USER INTENT]:
 [PRIMARY GOAL]:
@@ -124,6 +158,7 @@ SCREEN NAME:
 ```
 
 Rules:
+
 - one primary action only  
 - no competing actions  
 - keep it minimal  
@@ -134,7 +169,7 @@ Rules:
 
 Paste this into your AI tool:
 
-```
+```text
 Read UX.md and Design.md fully.
 
 Treat them as strict rules, not suggestions.
@@ -187,7 +222,7 @@ Paste your filled screen below the prompt.
 
 Example:
 
-```
+```text
 [USER INTENT]: User wants to get started  
 [PRIMARY GOAL]: Guide to first action  
 [PRIMARY ACTION]: Get Started  
@@ -239,12 +274,13 @@ The experience should feel:
 - low effort  
 
 If the user has to:
+
 - think  
 - re-read  
 - hesitate  
 - search for what to do  
 
-It failed.  
+It failed.
 
 ---
 
