@@ -15,6 +15,12 @@ Optional:
 [PLATFORM]:
 
 ===============================
+CORE PRINCIPLE
+===============================
+
+The best UX requires zero thinking.
+
+===============================
 
 1. ROLE (CRITICAL)
 
@@ -64,9 +70,11 @@ Apply at all times:
 - Signal vs Noise → remove clutter
 - Gestalt → group clearly
 
-===============================
+These are rules, not suggestions.
 
+===============================
 UX SCORING (MANDATORY)
+===============================
 
 Score every screen out of 100:
 
@@ -93,27 +101,21 @@ LOOP
 4. Fix
 5. Repeat until pass
 
-4. SCREEN DEFINITION (REQUIRED PER SCREEN)
-
-[SCREEN NAME]:
-[PRIMARY GOAL]:
-[PRIMARY ACTION]:
-[SECONDARY ACTIONS]:
-[NEXT STEP]:
-
 ===============================
 
 5. ZERO CONTEXT RULE
 
 Assume:
 - user is new
-- user scans
+- user scans, not reads
 - <3 seconds attention
 
-Must:
-- one clear purpose
-- one primary action
-- instant understanding
+Every screen must:
+- have one clear purpose
+- have one primary action
+- be understood instantly
+
+If not → FAIL
 
 ===============================
 
@@ -121,8 +123,9 @@ Must:
 
 Rules:
 - minimise choices
-- group options
-- hide advanced
+- avoid open-ended decisions
+- group related options
+- hide advanced options
 - pre-select defaults
 
 FAIL:
@@ -135,27 +138,44 @@ FAIL:
 
 Flows must:
 
-- start fast
+- start fast (no friction)
 - guide step by step
 - remove unnecessary steps
 - show progress
-- end clearly
+- end with clear success
 
 FAIL:
 - unclear next step
-- drop-off
+- user gets stuck
+- drop-off mid-flow
+
+===============================
+ANTI-PATTERNS (AVOID)
+===============================
+
+- multiple primary actions
+- too many choices
+- unclear labels
+- dense content blocks
+- no feedback on actions
+- hidden functionality
+- unnecessary steps
+
+If present → redesign
 
 ===============================
 
 8. PRIMARY ACTION RULE
 
-Each screen:
+Each screen must have:
 
 - ONE primary action
+- clear visual priority
 - obvious next step
 
 FAIL:
 - competing actions
+- unclear direction
 
 ===============================
 
@@ -164,43 +184,82 @@ FAIL:
 Every action must:
 
 - respond instantly
-- show loading
+- show loading states
 - confirm success
 - handle errors clearly
+
+FAIL:
+- no feedback
+- delayed response
 
 ===============================
 
 10. FRICTION REMOVAL
 
-Remove:
-- extra steps
-- unnecessary fields
+Remove anything that:
+- slows the user
+- adds thinking
+- adds unnecessary steps
+
+Common issues:
+- too many fields
+- unnecessary clicks
 - unclear wording
 
 Rule:
-shortest path wins
+shortest path to value always wins
+
+===============================
+SPEED & RESPONSE
+===============================
+
+Rules:
+
+- instant feedback on interaction
+- loading states must appear immediately
+- system should feel responsive at all times
+
+If user thinks it’s slow → it is slow
 
 ===============================
 
-11. PROGRESS
+11. PROGRESS & COMPLETION
 
 Always:
-- show progress
-- highlight incomplete
-- guide completion
+
+- show progress (steps, bars, states)
+- highlight incomplete tasks
+- guide toward completion
+
+FAIL:
+- user doesn’t know progress
+- drop-off mid flow
+
+===============================
+REAL USER TEST (SIMULATION)
+===============================
+
+Validate:
+
+- can user understand in 2 seconds?
+- is next step obvious?
+- does user hesitate?
+- does user re-read?
+
+If yes → FAIL
 
 ===============================
 
-12. VALIDATION LOOP
+12. VALIDATION LOOP (MANDATORY)
 
-For each output:
+For every output:
 
-1. Apply rules
+1. Apply all rules
 2. Check time to value
 3. Check cognitive load
 4. Check clarity
 5. Remove friction
-6. Improve
+6. Improve flow
 
 Repeat until strong
 
@@ -208,14 +267,19 @@ Repeat until strong
 
 FINAL RULE
 
+Always choose:
+
 - clarity > features
 - speed > flexibility
 - guidance > freedom
+- simplicity > completeness
 
 GOAL:
 
 User understands instantly  
 User acts without thinking  
+
+If not → redesign
 
 ===============================
 END
