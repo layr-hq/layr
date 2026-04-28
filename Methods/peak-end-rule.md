@@ -1,27 +1,66 @@
 # Peak-End Rule
 
-## What it is
-Users judge an experience based on its peak moment and how it ends.
+## What
+The Peak-End Rule states that users judge an experience primarily based on its most intense moment (peak) and how it ends, rather than the overall average of the experience.
 
 ## Why it matters
-A strong finish can outweigh a mediocre journey.
+Even if a flow is functional, a weak or confusing ending leaves a negative impression.
+
+Strong peak and end moments:
+- increase satisfaction
+- improve perceived quality
+- increase likelihood of return and completion
+
+Weak endings:
+- create uncertainty
+- reduce trust
+- make the experience feel incomplete
+
+## When to apply
+- onboarding completion
+- form submissions
+- checkout or purchase flows
+- task completion states
+- any multi-step or goal-based interaction
 
 ## How to apply
-- create a clear “success” moment
-- give satisfying feedback on completion
-- end flows cleanly and confidently
-- highlight value at the end
+
+- create a clear and satisfying completion moment
+- confirm success with strong visual feedback
+- highlight the value achieved at the end
+- reduce friction at the final step
+- ensure the final state feels complete and intentional
+
+The end should feel like a clear finish, not a drop-off.
+
+## Implementation rules
+
+- always provide a clear success state after completion
+- use visual confirmation such as messages, animations, or state changes
+- reinforce what the user achieved or gained
+- avoid ambiguous endings or silent completion
+- ensure the final step is simple and low friction
+- guide the user to the next logical action after completion
 
 ## Example
+
 Bad:
-Flow ends with nothing or confusion
+- form submits with no confirmation
+- user unsure if action succeeded
+- flow ends abruptly with no direction
 
 Good:
-Clear success state with confirmation
+- clear success message and confirmation
+- visual indication of completion
+- next step suggested or provided
 
-## Fail signs
-- user unsure if they completed the task
-- weak or missing success feedback
+## Fail conditions
 
-## Rule
-Make the end feel rewarding and clear.
+- user unsure if the task is complete
+- no clear success feedback
+- abrupt or confusing ending
+- user does not feel a sense of completion
+
+## Enforcement rule
+
+If the user does not feel a clear, satisfying completion at the end, redesign the final step until success is obvious and reinforced.
