@@ -23,15 +23,15 @@ It turns proven principles into strict rules the AI must follow when building.
 
 ## What it’s based on
 
-- Hick’s Law → reduce choices  
-- Cognitive Load → reduce thinking  
-- Fitts’s Law → make actions easy  
-- Jakob’s Law → use familiar patterns  
-- Peak-End Rule → strong finish matters  
-- Goal Gradient → show progress  
-- Gestalt → clear structure  
-- Signal vs Noise → remove clutter  
-- Default Bias → guide decisions  
+- Hick’s Law - reduce choices  
+- Cognitive Load - reduce thinking  
+- Fitts’s Law - make actions easy  
+- Jakob’s Law - use familiar patterns  
+- Peak-End Rule - strong finish matters  
+- Goal Gradient - show progress  
+- Gestalt - clear structure  
+- Signal vs Noise - remove clutter  
+- Default Bias - guide decisions  
 
 Most people know these.  
 This system enforces them.
@@ -58,23 +58,23 @@ This system forces:
 
 ## Instructions
 
-Use this system to design screens that are **fast, obvious, and require zero thinking**.
+Use this system to design screens that are fast, obvious, and require zero thinking.
 
 ---
 
-### Step 1 — Define the user and goal
+### Step 1 - Define the user and goal
 
 Before designing anything, answer:
 
-- Who is the user?
-- What do they want right now?
-- What is the ONE action they must take?
+- Who is the user?  
+- What do they want right now?  
+- What is the ONE action they must take?  
 
-If you can’t answer this clearly → simplify first.
+If you can’t answer this clearly - simplify first.
 
 ---
 
-### Step 2 — Define the screen
+### Step 2 - Define the screen
 
 Go to:
 
@@ -95,7 +95,7 @@ SCREEN NAME:
 [USER INTENT]:
 [PRIMARY GOAL]:
 [PRIMARY ACTION]:
-[SECONDARY ACTIONS]: (max 1–2)
+[SECONDARY ACTIONS]: (max 1-2)
 [NEXT STEP]:
 ```
 
@@ -106,7 +106,7 @@ Rules:
 
 ---
 
-### Step 3 — Use the master prompt
+### Step 3 - Use the master prompt
 
 Paste this into your AI tool:
 
@@ -146,12 +146,12 @@ OUTPUT:
 - final improved version only
 - include UX score (/100)
 
-If the user has to think → it failed
+If the user has to think - it failed
 ```
 
 ---
 
-### Step 4 — Provide your screen input
+### Step 4 - Provide your screen input
 
 Paste your filled screen below the prompt.
 
@@ -165,7 +165,7 @@ Example:
 
 ---
 
-### Step 5 — Let AI build and refine
+### Step 5 - Let AI build and refine
 
 The AI will:
 
@@ -177,7 +177,7 @@ The AI will:
 
 ---
 
-### Step 6 — Repeat for every screen
+### Step 6 - Repeat for every screen
 
 Use this process for:
 
@@ -195,7 +195,7 @@ The user should:
 - understand instantly  
 - know what to do immediately  
 
-If they have to think → it’s wrong  
+If they have to think - it’s wrong  
 
 ---
 
