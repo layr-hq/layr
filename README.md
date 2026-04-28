@@ -15,6 +15,7 @@ A rule-based UX and design system for AI-built apps, turning proven principles i
 ---
 
 ## What this is
+
 A rule-based UX + design system for AI.
 
 It turns proven principles into strict rules the AI must follow when building.
@@ -62,19 +63,41 @@ Use this system to design screens that are fast, obvious, and require zero think
 
 ---
 
-### Step 1 - Define the user and goal
+### Step 1 - Load the system into your AI
 
-Before designing anything, answer:
+Open your AI tool (Claude, Codex, Cursor, etc).
+
+Paste both files into the context:
+
+- UX.md - defines behaviour, rules, scoring, and validation  
+- Design.md - defines layout, hierarchy, spacing, and visual clarity  
+
+Tell the AI:
+
+```
+Read UX.md and Design.md fully.
+
+Treat them as strict rules, not suggestions.
+Do not violate them.
+```
+
+These files control how the AI thinks and builds.
+
+---
+
+### Step 2 - Define the user and goal
+
+Before building anything, be clear on:
 
 - Who is the user?  
 - What do they want right now?  
 - What is the ONE action they must take?  
 
-If you can’t answer this clearly - simplify first.
+If this is unclear - simplify first.
 
 ---
 
-### Step 2 - Define the screen
+### Step 3 - Define the screen
 
 Go to:
 
@@ -106,7 +129,7 @@ Rules:
 
 ---
 
-### Step 3 - Use the master prompt
+### Step 4 - Use the master prompt
 
 Paste this into your AI tool:
 
@@ -151,7 +174,7 @@ If the user has to think - it failed
 
 ---
 
-### Step 4 - Provide your screen input
+### Step 5 - Provide your screen input
 
 Paste your filled screen below the prompt.
 
@@ -165,19 +188,20 @@ Example:
 
 ---
 
-### Step 5 - Let AI build and refine
+### Step 6 - Let AI build and refine
 
 The AI will:
 
 - build the screen  
-- score it  
+- score it using UX.md  
+- apply design rules from Design.md  
 - identify problems  
 - improve it  
 - repeat until strong  
 
 ---
 
-### Step 6 - Repeat for every screen
+### Step 7 - Repeat for every screen
 
 Use this process for:
 
