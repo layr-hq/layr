@@ -3,16 +3,6 @@ A rule-based UX and design system for AI-built apps, turning proven principles i
 
 ---
 
-Most AI-built apps work but feel bad to use.
-
-Too many options  
-Too much thinking  
-Unclear flows  
-
-This fixes that.
-
----
-
 ## What this is
 
 A rule-based UX + design system for AI.
