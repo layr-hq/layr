@@ -61,19 +61,20 @@ This system forces:
 
 ## How the system works
 
-```mermaid
-flowchart TD
-    A[Input] --> B[Template]
-    B --> C[UX Rules]
-    C --> D[Design Rules]
-    D --> E[Methods]
-    E --> F[Build]
-    F --> G[Score]
+## How the system works
 
-    G --> H{Pass?}
+```mermaid
+flowchart LR
+    A[Input - Task + User Goal] --> B[Templates - screen.md]
+    B --> C[UX Rules - UX.md]
+    C --> D[Design Rules - Design.md]
+    D --> E[Methods - /methods/]
+    E --> F[Build UI]
+    F --> G[UX Scoring]
+    G --> H{Score >= 85?}
     H -- No --> I[Improve]
     I --> G
-    H -- Yes --> J[Output]
+    H -- Yes --> J[Output - Clear, Usable Interface]
 ```
 
 ---
