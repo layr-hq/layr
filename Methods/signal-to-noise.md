@@ -1,27 +1,45 @@
-# Signal-to-Noise Ratio
+# Signal to Noise Ratio
 
-## What it is
-The balance between useful information (signal) and unnecessary elements (noise).
+## What
+The balance between useful information and unnecessary elements.
 
 ## Why it matters
-Too much noise hides what actually matters.
+Too much noise hides important content and reduces clarity.
+
+## When to apply
+- all screens
+- dense layouts
+- dashboards
+- feature-heavy interfaces
 
 ## How to apply
-- remove decorative elements with no purpose
+
+- remove unnecessary elements
 - reduce visual clutter
-- highlight important content with contrast
-- keep layouts clean and focused
+- highlight important elements with contrast
+- simplify layouts
+
+## Implementation rules
+
+- every element must serve a purpose
+- remove decorative elements that do not guide action
+- use whitespace to separate content
+- limit competing visual elements
 
 ## Example
+
 Bad:
-Shadows, gradients, borders everywhere
+- cluttered UI with multiple competing elements
 
 Good:
-Minimal design with clear emphasis
+- clean layout with clear focus
 
-## Fail signs
+## Fail conditions
+
 - user doesn’t know where to look
-- important elements get lost
+- important elements are lost
+- UI feels overwhelming
 
-## Rule
-If it doesn’t help the user act, remove it.
+## Enforcement rule
+
+If an element does not help the user act, remove it.
