@@ -66,6 +66,33 @@ Apply at all times:
 
 ===============================
 
+UX SCORING (MANDATORY)
+
+Score every screen out of 100:
+
+- Clarity (0–20)
+- Cognitive Load (0–20)
+- Time to Value (0–20)
+- Hierarchy (0–15)
+- Feedback (0–10)
+- Accessibility (0–10)
+- Trust (0–5)
+
+TOTAL: /100
+
+PASS: ≥ 85  
+FAIL: < 85 → must improve
+
+-------------------------------
+
+LOOP
+
+1. Build
+2. Score
+3. Identify weak areas
+4. Fix
+5. Repeat until pass
+
 4. SCREEN DEFINITION (REQUIRED PER SCREEN)
 
 [SCREEN NAME]:
