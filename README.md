@@ -86,7 +86,7 @@ These files control how the AI thinks and builds.
 
 ---
 
-### Step 2 - Define the user and goal in the UX.md file (Replace [Placeholders])
+### Step 2 - Define the user and goal in the UX.md file - Replace [Placeholders]
 
 Before building anything, be clear on:
 
