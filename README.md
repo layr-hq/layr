@@ -218,9 +218,27 @@ Use this process for:
 The user should:
 
 - understand instantly  
-- know what to do immediately  
+- know exactly what to do  
+- take action without hesitation  
+- never feel confused or overwhelmed  
+- move through the flow with minimal effort  
+- reach value as quickly as possible  
 
-If they have to think - it’s wrong  
+The experience should feel:
+
+- obvious  
+- fast  
+- clear  
+- predictable  
+- low effort  
+
+If the user has to:
+- think  
+- re-read  
+- hesitate  
+- search for what to do  
+
+It failed.  
 
 ---
 
