@@ -166,7 +166,13 @@ Rules:
 
 ### Step 4 - Use the master prompt
 
-Paste this into your AI tool:
+### Use the full system
+
+See `/prompts/master.md` for the complete execution prompt using all methods and scoring.
+
+---
+
+Or Paste this light version into your AI tool:
 
 ```text
 Read UX.md and Design.md fully.
@@ -206,12 +212,6 @@ OUTPUT:
 
 If the user has to think - it failed
 ```
-
----
-
-### Use the full system
-
-See `/prompts/master.md` for the complete execution prompt using all methods and scoring.
 
 ---
 
