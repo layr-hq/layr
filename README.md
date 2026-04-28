@@ -63,7 +63,7 @@ Use this system to design screens that are fast, obvious, and require zero think
 
 ---
 
-### Step 1 - Load the system into your AI
+### Step 1 - Load the system into your AI Model 
 
 Open your AI tool (Claude, Codex, Cursor, etc).
 
@@ -85,7 +85,7 @@ These files control how the AI thinks and builds.
 
 ---
 
-### Step 2 - Define the user and goal
+### Step 2 - Define the user and goal in the UX.md file (Replace [Placeholders])
 
 Before building anything, be clear on:
 
