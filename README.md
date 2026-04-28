@@ -175,6 +175,12 @@ If the user has to think - it failed
 
 ---
 
+### Use the full system
+
+See `/prompts/master.md` for the complete execution prompt using all methods and scoring.
+
+---
+
 ### Step 5 - Provide your screen input
 
 Paste your filled screen below the prompt.
