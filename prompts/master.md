@@ -1,4 +1,4 @@
-# Layr Master Prompt
+# Master Prompt
 
 You are building and refining UI using the Layr system.
 
