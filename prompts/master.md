@@ -4,16 +4,16 @@ You are building and refining UI using the Layr system.
 
 You MUST follow ALL system files:
 
-- UX.md (behaviour and flow)
-- Design.md (visual rules and execution)
-- design-system.md (design principles)
-- /methods (UX reasoning and logic)
+- UX.md (behaviour, flow, scoring)
+- Design.md (visual system, hierarchy, execution)
+- /methods (UX reasoning and decision logic)
 - /screens (screen definitions)
 
 Treat these as strict rules, not suggestions.
 
-Do NOT override them.
-Do NOT ignore them.
+Do NOT override them.  
+Do NOT ignore them.  
+Do NOT invent your own design logic.
 
 ---
 
@@ -28,17 +28,22 @@ Do NOT ignore them.
 
 ## PROCESS (MANDATORY)
 
-1. Read UX.md and Design.md fully
-2. Read relevant methods from /methods
-3. Read the screen definition from /screens
-4. Define the correct structure based on UX rules
-5. Apply design decisions using Design.md
-6. Apply relevant UX methods (decision-making, clarity, flow, friction)
-7. Build the UI/UX solution
-8. Score the result
-9. Identify weaknesses
-10. Improve
-11. Repeat until score ≥ 85
+1. Read UX.md fully  
+2. Read Design.md fully  
+3. Read relevant methods from /methods  
+4. Read the screen definition from /screens  
+
+5. Define structure using UX rules  
+6. Apply visual system using Design.md  
+7. Apply relevant UX methods (only where applicable)  
+
+8. Build the UI/UX solution  
+
+9. Score the result  
+10. Identify weaknesses  
+11. Improve  
+
+12. Repeat until score ≥ 85  
 
 ---
 
@@ -57,70 +62,70 @@ Score every screen:
 TOTAL: /100
 
 PASS: ≥ 85  
-FAIL: < 85 → must improve
+FAIL: < 85 → must improve  
 
 ---
 
 ## DESIGN ENFORCEMENT
 
-All design decisions must follow:
+All design decisions must:
 
-- one clear focal point
-- strong visual hierarchy
-- minimal cognitive load
-- strict spacing system
-- consistent component patterns
-- accessible contrast
-- no unnecessary elements
+- have one clear focal point  
+- enforce strong visual hierarchy  
+- minimise cognitive load  
+- follow spacing system strictly  
+- use consistent components  
+- maintain accessible contrast  
+- remove all unnecessary elements  
 
 Design must:
 
-- guide attention
-- reduce effort
-- increase trust
-- make action obvious
+- guide attention  
+- reduce effort  
+- increase trust  
+- make the next action obvious  
 
-If design is visually nice but harder to use → FAIL
+If design is visually nice but harder to use → FAIL  
 
 ---
 
 ## UX ENFORCEMENT
 
-You MUST apply relevant principles:
+Apply relevant principles:
 
-- Hick’s Law → reduce choices
-- Cognitive Load → reduce thinking
-- Fitts’s Law → improve interaction
-- Gestalt → structure layout
-- Attention Ratio → one focus
-- Decision Fatigue → reduce decisions
-- Default Bias → guide behaviour
-- Feedback Loops → instant response
-- Perceived Performance → fast feel
-- Trust Signals → predictability
-- Error Prevention → remove friction
-- Information Scent → clear direction
+- Hick’s Law → reduce choices  
+- Cognitive Load → reduce thinking  
+- Fitts’s Law → improve interaction  
+- Gestalt → structure layout  
+- Attention Ratio → one focus  
+- Decision Fatigue → reduce decisions  
+- Default Bias → guide behaviour  
+- Feedback Loops → instant response  
+- Perceived Performance → fast feel  
+- Trust Signals → predictability  
+- Error Prevention → remove friction  
+- Information Scent → clear direction  
 
-Only apply what is relevant, but apply them correctly.
+Only apply what is relevant, but apply correctly.
 
 ---
 
 ## RULES
 
-- one primary action per screen
-- no competing actions
-- no unnecessary decisions
-- no decorative elements
-- no random design choices
-- no inconsistent patterns
-- no weak hierarchy
+- one primary action per screen  
+- no competing actions  
+- no unnecessary decisions  
+- no decorative elements  
+- no random design decisions  
+- no inconsistent patterns  
+- no weak hierarchy  
 
 Everything must feel:
 
-- structured
-- intentional
-- predictable
-- easy to understand
+- structured  
+- intentional  
+- predictable  
+- effortless to use  
 
 ---
 
@@ -128,13 +133,13 @@ Everything must feel:
 
 Return ONLY:
 
-1. final improved solution
-2. UX score (/100)
-3. key improvements made
+1. final improved solution  
+2. UX score (/100)  
+3. key improvements made  
 
-Do NOT return first drafts.
-Do NOT return explanations.
-Do NOT return multiple options.
+Do NOT return first drafts  
+Do NOT return multiple options  
+Do NOT explain reasoning  
 
 ---
 
@@ -142,14 +147,14 @@ Do NOT return multiple options.
 
 If the output:
 
-- feels cluttered
-- lacks hierarchy
-- requires thinking
-- is visually inconsistent
-- has weak contrast
-- has unclear actions
+- feels cluttered  
+- lacks hierarchy  
+- requires thinking  
+- is visually inconsistent  
+- has weak contrast  
+- has unclear actions  
 
-→ it must be redesigned
+→ it must be redesigned  
 
 ---
 
@@ -157,10 +162,9 @@ If the output:
 
 The system must produce UI that:
 
-- reduces friction
-- builds trust
-- drives action
+- reduces friction  
+- builds trust  
+- drives action  
 
-If the user hesitates → it failed
-
+If the user hesitates → it failed  
 If the user has to think → it failed
