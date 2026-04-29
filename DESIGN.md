@@ -17,41 +17,85 @@ Optional:
 
 ===============================
 
+CORE PRINCIPLE
+
+Design is not decoration.
+
+Design must:
+- guide attention
+- reduce cognitive load
+- improve readability
+- increase trust
+- make action obvious
+
+If the UI looks good but is harder to use → FAIL
+
+===============================
+
 1. ROLE
 
-You are NOT decorating UI.
+You are NOT styling UI.
 
-You are building:
-→ clear, readable, structured interfaces
+You are implementing:
+→ a structured visual system that supports UX.md
+
+All decisions must:
+- reduce visual noise
+- improve clarity
+- guide user behaviour
 
 ===============================
 
 2. ZERO CONTEXT RULE
 
-User scans in seconds.
+Assume:
+- user is new
+- user scans, not reads
+- attention < 3 seconds
 
-Must:
-- one focal point
-- instant hierarchy
-- readable at glance
+Every screen must:
+- have one clear focal point
+- be understandable instantly
+- require no interpretation
+
+If user has to scan multiple times → FAIL
 
 ===============================
 
 3. COLOR SYSTEM
 
-Use only:
-- background
-- surface
-- primary
-- secondary
-- text
-- border
-- state
+Use only defined roles:
+
+- Background
+- Surface
+- Primary (action)
+- Secondary (support)
+- Text (primary, secondary, muted)
+- Border
+- State (success, warning, error)
 
 Rules:
-- primary = main action
-- no decorative use
-- contrast drives attention
+
+- primary colour = ONE purpose (main CTA only)
+- never use primary for decoration
+- contrast controls attention
+- muted colours reduce importance
+- high contrast increases importance
+
+Accessibility:
+
+- body text ≥ 4.5:1 contrast
+- large text ≥ 3:1
+
+Fail conditions:
+
+- too many colours
+- weak contrast
+- multiple elements competing visually
+
+Enforcement rule:
+
+If colour does not guide attention or meaning → remove or reduce it
 
 ===============================
 
@@ -59,121 +103,328 @@ Rules:
 
 Use max 2 fonts
 
-Scale:
-- H1: 28–32
-- H2: 22–24
-- H3: 18–20
-- Body: 14–16
-- Small: 12–13
+Type scale (fixed):
+
+- Display: 56–80px
+- H1: 36–48px
+- H2: 28–32px
+- H3: 20–24px
+- Body: 14–18px
+- Small: 12–13px
 
 Rules:
-- hierarchy via size + spacing
+
+- hierarchy must be visible through size, weight, spacing
+- never rely on colour alone
+- line height: 1.4–1.6
+- max line length: 50–80 characters
+- avoid dense paragraphs
+
+Fail conditions:
+
+- inconsistent sizes
+- hard-to-read text
+- weak hierarchy
+
+Enforcement rule:
+
+If text is not instantly scannable → simplify structure
 
 ===============================
 
-5. SPACING
+5. SPACING SYSTEM
 
-Use:
-4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64
+Use fixed scale:
+
+4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
 
 Rules:
-- padding ≥ 16
-- consistent spacing
-- group related items
+
+- padding ≥ 16px
+- section spacing ≥ 64px
+- related items closer together
+- unrelated items spaced apart
+
+Fail conditions:
+
+- uneven spacing
+- crowded UI
+- unclear grouping
+
+Enforcement rule:
+
+If spacing feels inconsistent → rebuild using the scale
 
 ===============================
 
-6. HIERARCHY
+6. VISUAL HIERARCHY
 
-Every screen:
+Every screen must have:
 
-- primary
-- secondary
-- tertiary
+1. primary focus
+2. secondary information
+3. tertiary detail
 
 Rules:
-- size + spacing define importance
+
+- size defines importance
+- spacing reinforces grouping
+- contrast highlights priority
+- position guides flow (top → middle → bottom)
+
+Fail conditions:
+
+- multiple focal points
+- unclear importance
+- user does not know where to look
+
+Enforcement rule:
+
+If everything looks important → reduce until one element dominates
 
 ===============================
 
-7. COMPONENTS
+7. COMPONENT SYSTEM
 
-Use:
+Use reusable components:
+
 - buttons
 - inputs
 - cards
 - modals
 - lists
+- navigation
 
-States:
+Consistency rule:
+
+same component = same:
+- spacing
+- typography
+- colour
+- behaviour
+- states
+
+States required:
+
 - default
 - hover
 - active
 - disabled
 - loading
+- error
+- success
+
+Fail conditions:
+
+- inconsistent components
+- missing states
+
+Enforcement rule:
+
+If a pattern appears once → it must behave the same everywhere
 
 ===============================
 
-8. ALIGNMENT
+8. ALIGNMENT & GRID
 
 Rules:
-- strict alignment
+
+- use strict grid alignment
 - no floating elements
+- left-align text by default
+- maintain consistent margins
+- use containers for structure
+
+Fail conditions:
+
+- elements misaligned
+- layout feels unstable
+- inconsistent spacing across sections
+
+Enforcement rule:
+
+If layout feels loose → fix alignment before styling
 
 ===============================
 
-9. INTERACTION
+9. CONTRAST & EMPHASIS
+
+Use contrast to guide attention:
+
+- size
+- weight
+- spacing
+- opacity
+- colour
 
 Rules:
-- target ≥ 40x40
-- instant response
+
+- one element must have highest emphasis
+- secondary elements must be visually reduced
+- avoid equal emphasis across elements
+
+Fail conditions:
+
+- weak CTA visibility
+- too many high-contrast elements
+- user unsure where to act
+
+Enforcement rule:
+
+If everything stands out → reduce emphasis until focus is clear
 
 ===============================
 
-10. ANIMATION
+10. DENSITY CONTROL
 
-Use only to:
+Rules:
+
+- minimise visible information
+- break content into sections
+- use whitespace to separate blocks
+- reveal complexity progressively
+
+Fail conditions:
+
+- UI feels heavy
+- too many elements visible
+- user overwhelmed
+
+Enforcement rule:
+
+If screen feels dense → reduce before redesigning
+
+===============================
+
+11. INTERACTION
+
+Rules:
+
+- minimum target: 40x40px
+- primary actions must be easy to reach
+- interaction must feel immediate
+
+Fail conditions:
+
+- missed clicks
+- slow interaction
+- unclear interaction points
+
+Enforcement rule:
+
+If interaction feels difficult → increase size or spacing
+
+===============================
+
+12. FEEDBACK & MOTION
+
+Motion must:
+
 - guide attention
-- explain change
+- explain state change
+- confirm interaction
 
 Timing:
-100–300ms
+
+- micro: 100–200ms
+- standard: 200–300ms
+
+Rules:
+
+- no decorative animation
+- always show state change
+- feedback must be immediate
+
+Fail conditions:
+
+- no feedback
+- slow transitions
+- confusing motion
+
+Enforcement rule:
+
+If motion does not improve clarity → remove it
 
 ===============================
 
-11. CLARITY
+13. ACCESSIBILITY
+
+Rules:
+
+- text must meet contrast standards
+- no colour-only meaning
+- visible focus states required
+- readable at all sizes
+
+Fail conditions:
+
+- unreadable text
+- missing focus states
+- inaccessible interactions
+
+Enforcement rule:
+
+If not accessible → not complete
+
+===============================
+
+14. CLARITY SYSTEM
 
 Remove anything that does not:
+
 - inform
 - guide
 - support action
 
+Whitespace is a tool, not empty space
+
+Fail conditions:
+
+- clutter
+- unnecessary elements
+- visual noise
+
+Enforcement rule:
+
+If an element does not serve the user → remove it
+
 ===============================
 
-12. VALIDATION
+15. VALIDATION LOOP
 
-Check:
-- hierarchy
-- spacing
-- clarity
-- consistency
+For every screen:
 
-Fix until:
-- clean
-- obvious
+1. check hierarchy
+2. check spacing
+3. check contrast
+4. check alignment
+5. check density
+6. check accessibility
+7. remove noise
+
+Repeat until:
+
+- clear
+- fast
+- structured
 - readable
 
 ===============================
 
 FINAL RULE
 
+Always choose:
+
 - clarity > style
 - consistency > creativity
-- function > decoration
+- structure > decoration
+- readability > cleverness
 
 GOAL:
 
-User sees → understands → acts
+User sees → understands → acts instantly
+
+If they hesitate → redesign
 
 ===============================
 END
