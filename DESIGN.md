@@ -43,6 +43,7 @@ All decisions must:
 - reduce visual noise
 - improve clarity
 - guide user behaviour
+- reinforce trust
 
 ===============================
 
@@ -58,7 +59,7 @@ Every screen must:
 - be understandable instantly
 - require no interpretation
 
-If user has to scan multiple times → FAIL
+If the user scans more than once → FAIL
 
 ===============================
 
@@ -81,6 +82,7 @@ Rules:
 - contrast controls attention
 - muted colours reduce importance
 - high contrast increases importance
+- colour must always communicate meaning
 
 Accessibility:
 
@@ -92,6 +94,7 @@ Fail conditions:
 - too many colours
 - weak contrast
 - multiple elements competing visually
+- decorative gradients with no purpose
 
 Enforcement rule:
 
@@ -119,12 +122,14 @@ Rules:
 - line height: 1.4–1.6
 - max line length: 50–80 characters
 - avoid dense paragraphs
+- text must be scannable instantly
 
 Fail conditions:
 
 - inconsistent sizes
 - hard-to-read text
 - weak hierarchy
+- too many styles
 
 Enforcement rule:
 
@@ -144,6 +149,7 @@ Rules:
 - section spacing ≥ 64px
 - related items closer together
 - unrelated items spaced apart
+- spacing must define structure, not decoration
 
 Fail conditions:
 
@@ -171,6 +177,7 @@ Rules:
 - spacing reinforces grouping
 - contrast highlights priority
 - position guides flow (top → middle → bottom)
+- only one dominant element allowed
 
 Fail conditions:
 
@@ -218,6 +225,7 @@ Fail conditions:
 
 - inconsistent components
 - missing states
+- unpredictable behaviour
 
 Enforcement rule:
 
@@ -233,7 +241,8 @@ Rules:
 - no floating elements
 - left-align text by default
 - maintain consistent margins
-- use containers for structure
+- use containers to control layout
+- align everything intentionally
 
 Fail conditions:
 
@@ -267,7 +276,7 @@ Fail conditions:
 
 - weak CTA visibility
 - too many high-contrast elements
-- user unsure where to act
+- unclear next action
 
 Enforcement rule:
 
@@ -419,6 +428,7 @@ Always choose:
 - consistency > creativity
 - structure > decoration
 - readability > cleverness
+- trust > visual flair
 
 GOAL:
 
