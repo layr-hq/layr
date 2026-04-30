@@ -2,6 +2,8 @@
 
 A rule-based UX and design system for AI-built apps, turning proven principles into enforceable constraints that reduces friction, builds trust, and drives action.
 
+→ Create your system: https://layrhq.io
+
 ---
 
 ## Table of Contents
@@ -56,6 +58,12 @@ This system forces:
 - clarity  
 - speed  
 - obvious next steps  
+
+---
+
+Build with real UX standards, not AI guesses.
+
+→ Create your system: https://layrhq.io
 
 ---
 
@@ -288,3 +296,9 @@ It failed.
 Free to use in personal and commercial projects.
 
 Not allowed to resell or redistribute this as a standalone product.
+
+---
+
+Build with real UX standards, not AI guesses.
+
+→ Create your system: https://layrhq.io
