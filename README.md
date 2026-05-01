@@ -4,6 +4,18 @@ A rule-based UX and design system for AI-built apps, turning proven principles i
 
 → Create your system: https://layrhq.io
 
+## Quick Setup Guide
+
+1. Add the folder to your project  
+2. Paste the prompt into your AI  
+3. Ask it to build or fix a screen
+
+## Example
+
+“Create a dashboard for a project management app”
+
+→ Output follows UX rules automatically
+
 ---
 
 ## Table of Contents
