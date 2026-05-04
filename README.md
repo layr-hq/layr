@@ -1,4 +1,4 @@
-# UX + Design System (for AI-built apps)
+# UX + Design System (for AI-built Webistes / apps)
 
 A rule-based UX and design system for AI-built apps, turning proven principles into enforceable constraints that reduces friction, builds trust, and drives action.
 
