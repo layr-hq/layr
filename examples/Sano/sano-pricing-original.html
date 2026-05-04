@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Sano</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --bg-muted: #f4f4f5;
+    --text: #0a0a0a;
+    --text-2: #404040;
+    --muted: #71717a;
+    --muted-2: #a1a1aa;
+    --border: #e4e4e7;
+    --border-strong: #d4d4d8;
+    --primary: #0a0a0a;
+    --primary-hover: #262626;
+    --accent: #2563eb;
+    --accent-soft: #eff6ff;
+    --success: #16a34a;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+    color: var(--text-2);
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    border: 1px solid transparent;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-2);
+  }
+
+  .btn-ghost:hover { color: var(--text); }
+
+  .btn-secondary {
+    background: white;
+    border-color: var(--border);
+    color: var(--text);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--border-strong);
+    background: var(--bg-soft);
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-primary:hover { background: var(--primary-hover); }
+
+  .btn-lg {
+    height: 44px;
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    text-align: center;
+    padding: 80px 0 40px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+
+  .hero p {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 560px;
+    margin: 0 auto 32px;
+    line-height: 1.55;
+  }
+
+  /* Billing toggle */
+  .billing-toggle {
+    display: inline-flex;
+    background: var(--bg-muted);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .billing-toggle button {
+    background: transparent;
+    border: 0;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .billing-toggle button.active {
+    background: white;
+    color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+
+  .save-badge {
+    background: #dcfce7;
+    color: #166534;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* ---------- Pricing cards ---------- */
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 32px 0 80px;
+  }
+
+  .plan {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .plan.featured {
+    border-color: var(--text);
+    box-shadow: 0 0 0 1px var(--text);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    background: var(--text);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+
+  .plan-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .plan-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 38px;
+  }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .plan-price .amount {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .plan-price .period {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .plan-billed {
+    font-size: 12px;
+    color: var(--muted-2);
+    margin-bottom: 24px;
+    min-height: 16px;
+  }
+
+  .plan .btn {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .plan-features-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+
+  .plan-features svg {
+    flex-shrink: 0;
+    color: var(--success);
+    margin-top: 3px;
+  }
+
+  /* ---------- Comparison table ---------- */
+  .compare {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .compare h2 {
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .compare > .container > p {
+    color: var(--muted);
+    text-align: center;
+    margin: 0 0 48px;
+    font-size: 16px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  table thead th {
+    background: var(--bg-soft);
+    font-weight: 600;
+    text-align: left;
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 64px;
+    z-index: 5;
+  }
+
+  table thead th:first-child { border-top-left-radius: 12px; }
+  table thead th:last-child { border-top-right-radius: 12px; }
+
+  table thead th .plan-th-name {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  table thead th .plan-th-price {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .category-row td {
+    background: var(--bg-soft);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-2);
+    vertical-align: middle;
+  }
+
+  table tbody tr td:first-child {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .check {
+    color: var(--success);
+    display: inline-flex;
+  }
+
+  .dash {
+    color: var(--muted-2);
+  }
+
+  .feature-help {
+    color: var(--muted-2);
+    font-size: 12px;
+    margin-left: 4px;
+    cursor: help;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+  }
+
+  .faq h2 {
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .faq > .container > p {
+    color: var(--muted);
+    text-align: center;
+    margin: 0 0 48px;
+    font-size: 16px;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 48px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .faq-item h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  .faq-item p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ---------- CTA banner ---------- */
+  .cta {
+    padding: 96px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta h2 {
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .cta p {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 520px;
+    margin: 0 auto 28px;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-links a:hover { color: var(--text); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px) {
+    .plans { grid-template-columns: repeat(2, 1fr); }
+    .faq-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    h1 { font-size: 36px; }
+    .plans { grid-template-columns: 1fr; }
+    table { font-size: 13px; }
+    table thead th { padding: 12px 10px; }
+    table tbody td { padding: 12px 10px; }
+    .compare { overflow-x: auto; }
+    .compare table { min-width: 720px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header>
+  <div class="container nav">
+    <div style="display:flex;align-items:center;gap:32px">
+      <a href="#" class="brand">
+        <div class="brand-mark">S</div>
+        Sano
+      </a>
+      <nav class="nav-links">
+        <a href="#">Product</a>
+        <a href="#">Customers</a>
+        <a href="#">Pricing</a>
+        <a href="#">Docs</a>
+        <a href="#">Changelog</a>
+      </nav>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost">Sign in</a>
+      <a href="#" class="btn btn-primary">Start free</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Pricing</span>
+    <h1>Plans for every stage of growth.</h1>
+    <p>Sano helps product teams understand what users actually do. Start free, then scale to plans built for serious analytics work.</p>
+
+    <div class="billing-toggle" role="tablist">
+      <button>Monthly</button>
+      <button class="active">
+        Annual
+        <span class="save-badge">Save 20%</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Plans ============ -->
+<section>
+  <div class="container plans">
+
+    <!-- Free -->
+    <div class="plan">
+      <div class="plan-name">Free</div>
+      <div class="plan-desc">For solo developers and small projects getting started with product analytics.</div>
+      <div class="plan-price">
+        <span class="amount">$0</span>
+        <span class="period">/ month</span>
+      </div>
+      <div class="plan-billed">Free forever</div>
+      <a href="#" class="btn btn-secondary">Get started</a>
+      <div class="plan-features-label">Includes</div>
+      <ul class="plan-features">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 10,000 events / month</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>30-day data retention</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>3 dashboards</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 team member</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Community support</li>
+      </ul>
+    </div>
+
+    <!-- Starter -->
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="plan-desc">For small teams that need more events, longer history, and shared dashboards.</div>
+      <div class="plan-price">
+        <span class="amount">$29</span>
+        <span class="period">/ month</span>
+      </div>
+      <div class="plan-billed">Billed annually, or $36 monthly</div>
+      <a href="#" class="btn btn-secondary">Start 14-day trial</a>
+      <div class="plan-features-label">Everything in Free, plus</div>
+      <ul class="plan-features">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 100,000 events / month</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>6 months data retention</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited dashboards</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 team members</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Funnels and retention</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Email support</li>
+      </ul>
+    </div>
+
+    <!-- Pro (featured) -->
+    <div class="plan featured">
+      <span class="featured-badge">Most popular</span>
+      <div class="plan-name">Pro</div>
+      <div class="plan-desc">For growing product teams running cross-functional analysis and experiments.</div>
+      <div class="plan-price">
+        <span class="amount">$99</span>
+        <span class="period">/ month</span>
+      </div>
+      <div class="plan-billed">Billed annually, or $124 monthly</div>
+      <a href="#" class="btn btn-primary">Start 14-day trial</a>
+      <div class="plan-features-label">Everything in Starter, plus</div>
+      <ul class="plan-features">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 1M events / month</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 years data retention</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>20 team members</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>A/B testing and feature flags</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cohort analysis &amp; segments</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>API access &amp; webhooks</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li>
+      </ul>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="plan">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-desc">For larger organisations with security, compliance, and custom data needs.</div>
+      <div class="plan-price">
+        <span class="amount">Custom</span>
+      </div>
+      <div class="plan-billed">Annual contract</div>
+      <a href="#" class="btn btn-secondary">Contact sales</a>
+      <div class="plan-features-label">Everything in Pro, plus</div>
+      <ul class="plan-features">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited events</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited retention</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited team members</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SSO/SAML &amp; SCIM</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom roles &amp; audit logs</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Data residency (US/EU)</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dedicated CSM &amp; SLA</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ Comparison table ============ -->
+<section class="compare">
+  <div class="container">
+    <h2>Compare plans</h2>
+    <p>A complete breakdown of what's included in every plan.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:34%">Features</th>
+          <th>
+            <div class="plan-th-name">Free</div>
+            <div class="plan-th-price">$0</div>
+          </th>
+          <th>
+            <div class="plan-th-name">Starter</div>
+            <div class="plan-th-price">$29 / mo</div>
+          </th>
+          <th>
+            <div class="plan-th-name">Pro</div>
+            <div class="plan-th-price">$99 / mo</div>
+          </th>
+          <th>
+            <div class="plan-th-name">Enterprise</div>
+            <div class="plan-th-price">Custom</div>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- Usage -->
+        <tr class="category-row"><td colspan="5">Usage</td></tr>
+        <tr>
+          <td>Events tracked / month</td>
+          <td>10,000</td>
+          <td>100,000</td>
+          <td>1,000,000</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Data retention</td>
+          <td>30 days</td>
+          <td>6 months</td>
+          <td>2 years</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Team members</td>
+          <td>1</td>
+          <td>5</td>
+          <td>20</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Projects / workspaces</td>
+          <td>1</td>
+          <td>3</td>
+          <td>10</td>
+          <td>Unlimited</td>
+        </tr>
+
+        <!-- Analytics -->
+        <tr class="category-row"><td colspan="5">Analytics</td></tr>
+        <tr>
+          <td>Dashboards &amp; reports</td>
+          <td>3</td>
+          <td>Unlimited</td>
+          <td>Unlimited</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Funnels &amp; retention</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Cohort analysis</td>
+          <td><span class="dash">—</span></td>
+          <td>Basic</td>
+          <td>Advanced</td>
+          <td>Advanced</td>
+        </tr>
+        <tr>
+          <td>Session replays</td>
+          <td><span class="dash">—</span></td>
+          <td>1,000 / mo</td>
+          <td>10,000 / mo</td>
+          <td>Custom</td>
+        </tr>
+        <tr>
+          <td>A/B testing &amp; feature flags</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Anomaly detection</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+
+        <!-- Integrations -->
+        <tr class="category-row"><td colspan="5">Integrations &amp; data</td></tr>
+        <tr>
+          <td>SDKs (web, iOS, Android, server)</td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Native integrations</td>
+          <td>5</td>
+          <td>20</td>
+          <td>All (60+)</td>
+          <td>All (60+)</td>
+        </tr>
+        <tr>
+          <td>API access &amp; webhooks</td>
+          <td><span class="dash">—</span></td>
+          <td>Read-only</td>
+          <td>Full</td>
+          <td>Full</td>
+        </tr>
+        <tr>
+          <td>Data warehouse sync (BigQuery, Snowflake)</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td>Daily</td>
+          <td>Real-time</td>
+        </tr>
+        <tr>
+          <td>Reverse ETL</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+
+        <!-- Security -->
+        <tr class="category-row"><td colspan="5">Security &amp; compliance</td></tr>
+        <tr>
+          <td>2-factor authentication</td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>SSO / SAML</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td>Google &amp; Microsoft</td>
+          <td>Custom IdP</td>
+        </tr>
+        <tr>
+          <td>SCIM provisioning</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Custom roles &amp; permissions</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td>Built-in roles</td>
+          <td>Custom</td>
+        </tr>
+        <tr>
+          <td>Audit logs</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td>30 days</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>SOC 2 Type II / ISO 27001</td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>HIPAA / BAA</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Data residency</td>
+          <td>US</td>
+          <td>US</td>
+          <td>US or EU</td>
+          <td>US, EU, custom</td>
+        </tr>
+
+        <!-- Support -->
+        <tr class="category-row"><td colspan="5">Support</td></tr>
+        <tr>
+          <td>Documentation &amp; community</td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Email support</td>
+          <td><span class="dash">—</span></td>
+          <td>48h response</td>
+          <td>24h response</td>
+          <td>4h response</td>
+        </tr>
+        <tr>
+          <td>Priority support &amp; chat</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Dedicated CSM</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+        </tr>
+        <tr>
+          <td>Uptime SLA</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="dash">—</span></td>
+          <td>99.9%</td>
+          <td>99.99%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="container">
+    <h2>Frequently asked questions</h2>
+    <p>Can't find the answer you're looking for? <a href="#" style="color:var(--accent)">Talk to sales</a>.</p>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What counts as an event?</h3>
+        <p>Any user action you track in Sano — page views, button clicks, sign-ups, custom events. Identify calls and group updates do not count toward your monthly limit.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I change plans later?</h3>
+        <p>Yes. You can upgrade, downgrade, or cancel at any time. Upgrades are prorated; downgrades take effect at the end of your billing cycle.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What happens if I exceed my event limit?</h3>
+        <p>We'll notify you when you reach 80% of your limit. We never drop events on Pro and Enterprise — overages are billed at $0.50 per 1,000 events. Free and Starter plans pause ingestion until the next month or upgrade.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you offer discounts for startups or non-profits?</h3>
+        <p>Yes. Eligible early-stage startups get 50% off Pro for 12 months, and registered non-profits get the Pro plan for free. Apply via our partnerships page.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does annual billing work?</h3>
+        <p>Pay once per year and save 20% versus monthly. You can switch back to monthly billing at the end of your annual term.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data secure?</h3>
+        <p>Sano is SOC 2 Type II and ISO 27001 certified. All data is encrypted in transit and at rest. Enterprise customers can choose US or EU data residency, and HIPAA-compliant deployments are available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA banner ============ -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to see what your users actually do?</h2>
+    <p>Get started in minutes. No credit card required for the Free plan.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary btn-lg">Start free</a>
+      <a href="#" class="btn btn-secondary btn-lg">Book a demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <div class="container footer-row">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      Sano
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Security</a>
+      <a href="#">Status</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>© 2026 Sano, Inc.</div>
+  </div>
+</footer>
+
+</body>
+</html>

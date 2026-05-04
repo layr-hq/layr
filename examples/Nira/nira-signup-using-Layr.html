@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create your Nira account</title>
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: rgba(255, 255, 255, 0.02);
+    --text: #f4f4f5;
+    --muted: #8a8a93;
+    --muted-2: #5a5a63;
+    --border: #1f1f24;
+    --border-strong: #2a2a32;
+    --accent: #a78bfa;
+    --accent-2: #6366f1;
+    --ring: rgba(167, 139, 250, 0.25);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Ambient glows for premium feel — atmosphere, not distraction */
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+  }
+
+  body::before {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #6366f1, transparent 70%);
+    top: -200px;
+    left: -200px;
+    opacity: 0.45;
+  }
+
+  body::after {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, #a78bfa, transparent 70%);
+    bottom: -300px;
+    right: -250px;
+    opacity: 0.28;
+  }
+
+  /* Single centered column — no competing regions */
+  .card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 56px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #a78bfa 0%, #6366f1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 6px 20px rgba(99, 102, 241, 0.35);
+    position: relative;
+  }
+
+  .brand-mark::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.2), transparent 40%);
+  }
+
+  .brand-mark svg {
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  /* Visual hierarchy: H1 dominates */
+  h1 {
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0 0 36px;
+  }
+
+  /* Only two fields — no extra decisions before the CTA */
+  .field {
+    margin-bottom: 16px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #d4d4d8;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--surface);
+    color: var(--text);
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  }
+
+  input::placeholder {
+    color: var(--muted-2);
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--ring);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  /* Fitts's Law: single, large, full-width CTA */
+  button.primary {
+    width: 100%;
+    height: 52px;
+    margin-top: 12px;
+    background: linear-gradient(180deg, #ffffff, #e4e4e7);
+    color: #0a0a0b;
+    border: 0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.05s, box-shadow 0.2s, filter 0.15s;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 1px 2px rgba(0,0,0,0.5),
+      0 0 0 1px rgba(255,255,255,0.1),
+      0 6px 18px rgba(167, 139, 250, 0.18);
+  }
+
+  button.primary:hover {
+    filter: brightness(1.04);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 0 0 1px rgba(255,255,255,0.18),
+      0 10px 28px rgba(167, 139, 250, 0.3);
+  }
+
+  button.primary:active {
+    transform: translateY(1px);
+  }
+
+  /* Legal kept tiny, out of the decision path */
+  .legal {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .legal a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal a:hover {
+    color: var(--text);
+  }
+
+  /* Sign-in link de-emphasized — secondary path */
+  .signin {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .signin a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .signin a:hover {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+
+<main class="card">
+
+  <div class="brand">
+    <div class="brand-mark">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 19V5l14 14V5"/>
+      </svg>
+    </div>
+    Nira
+  </div>
+
+  <h1>Create your account</h1>
+  <p class="subtitle">Start writing clearer marketing content with your team in under a minute.</p>
+
+  <form>
+    <div class="field">
+      <label for="email">Work email</label>
+      <input id="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+    </div>
+
+    <button type="submit" class="primary">Create account</button>
+
+    <p class="legal">
+      By creating an account you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+    </p>
+  </form>
+
+  <p class="signin">Already have an account? <a href="#">Sign in</a></p>
+
+</main>
+
+</body>
+</html>
