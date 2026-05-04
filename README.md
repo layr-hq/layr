@@ -2,6 +2,8 @@
 
 A rule-based UX and design system for AI-built apps, turning proven principles into enforceable constraints that reduces friction, builds trust, and drives action.
 
+![Example](./Examples/Example.png)
+
 ## Quick Setup Guide
 
 1. Add the folder to your project
