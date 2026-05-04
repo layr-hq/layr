@@ -2,6 +2,18 @@
 
 A rule-based UX and design system for AI-built apps, turning proven principles into enforceable constraints that reduces friction, builds trust, and drives action.
 
+## Before vs After
+
+Turn messy AI output into clean, structured UI.
+
+<p align="center">
+  <img src="./examples/Example-1.png" width="1000"/>
+</p>
+
+<p align="center">
+  <em>Typical AI output vs UI generated with Layr UX system</em>
+</p>
+
 ## Quick Setup Guide
 
 1. Add the folder to your project
